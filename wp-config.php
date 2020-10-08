@@ -15,6 +15,8 @@ $debian_file = '/etc/wordpress/config-'.strtolower($debian_server).'.php';
 $debian_main_server = preg_replace("/^[^.]*\./", "", $debian_server);
 $debian_main_file = '/etc/wordpress/config-'.strtolower($debian_main_server).'.php';
 
+define('FS_METHOD','direct');
+
 if (file_exists($debian_file)) {
     require_once($debian_file);
     define('DEBIAN_FILE', $debian_file);
